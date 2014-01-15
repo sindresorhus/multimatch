@@ -1,6 +1,6 @@
 'use strict';
 var assert = require('assert')
-var mm = require('./multimatch');
+var mm = require('./index');
 var f = ['foo', 'bar', 'baz'];
 
 describe('multimatch', function () {
