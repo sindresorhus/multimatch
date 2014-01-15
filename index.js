@@ -11,7 +11,7 @@ module.exports = function (list, patterns, options) {
 		return [];
 	}
 
-	options = options ||{};
+	options = options || {};
 	list = arrayify(list);
 	patterns = arrayify(patterns);
 
