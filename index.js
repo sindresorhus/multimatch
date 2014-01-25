@@ -16,7 +16,7 @@ module.exports = function (list, patterns, options) {
 	patterns = arrayify(patterns);
 
 	return patterns.reduce(function (ret, pattern, i) {
-		if (pattern.indexOf('!') === 0) {
+		if (pattern[0] === '!') {
 			ret = i === 0 ? list : ret;
 			return _.difference(ret, minimatch.match(ret, pattern.slice(1), options));
 		}
