@@ -43,7 +43,7 @@ See the [tests](https://github.com/sindresorhus/multimatch/blob/master/test.js) 
 
 ## API
 
-Same as [`multimatch.match()`](https://github.com/isaacs/minimatch#minimatchmatchlist-pattern-options) except for `pattern` also accepting an array.
+Same as [`minimatch.match()`](https://github.com/isaacs/minimatch#minimatchmatchlist-pattern-options) except for `pattern` also accepting an array.
 
 
 ## License
