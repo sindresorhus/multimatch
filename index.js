@@ -3,24 +3,29 @@ var minimatch = require('minimatch');
 var _ = require('lodash');
 
 function arrayify(arr) {
-	return Array.isArray(arr) ? arr : [arr];
+  return _.flatten(!Array.isArray(arr) ? [arr] : arr);
 }
 
-module.exports = function (list, patterns, options) {
-	if (list == null || patterns == null) {
-		return [];
-	}
+function process(arr, pattern, options) {
+  var a = [], b = [];
+  if (/^!/.test(pattern)) {
+    var negated = pattern.replace('!', '');
+    a = minimatch.match(arr, negated, options);
+  } else {
+    b = minimatch.match(arr, pattern, options);
+  }
+  return {excluded: a, included: b};
+}
 
-	options = options || {};
-	list = arrayify(list);
-	patterns = arrayify(patterns);
+module.exports = function(list, patterns, options) {
+  patterns = arrayify(patterns);
+  list = arrayify(list);
 
-	return patterns.reduce(function (ret, pattern, i) {
-		if (pattern[0] === '!') {
-			ret = i === 0 ? list : ret;
-			return _.difference(ret, minimatch.match(ret, pattern.slice(1), options));
-		}
+  if (!list.length || !patterns.length) {return [];}
 
-		return _.union(ret, minimatch.match(list, pattern, options));
-	}, []);
+  return _.reduce(patterns, function(res, pattern) {
+    var matches = process(list, pattern, options || {});
+    var included = _.union(res, matches.included);
+    return _.difference(included, matches.excluded);
+  }, []);
 };
