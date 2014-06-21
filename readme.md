@@ -43,6 +43,11 @@ See the [tests](https://github.com/sindresorhus/multimatch/blob/master/test.js) 
 Same as [`minimatch.match()`](https://github.com/isaacs/minimatch#minimatchmatchlist-pattern-options) except for `pattern` also accepting an array.
 
 
+## Related
+
+See [globby](https://github.com/sindresorhus/globby) if you need to match against the filesystem instead of a list.
+
+
 ## License
 
 MIT © [Sindre Sorhus](http://sindresorhus.com), [Jon Schlinkert](https://github.com/jonschlinkert)
