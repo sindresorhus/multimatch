@@ -30,11 +30,9 @@ $ npm install --save multimatch
 ```js
 var multimatch = require('multimatch');
 
-multimatch(['unicorn', 'cake', 'rainbows'], ['!cake', '*corn']));
+multimatch(['unicorn', 'cake', 'rainbows'], ['*', '!cake']);
 //=> ['unicorn', 'rainbows']
 ```
-
-Patterns are additive while negations (eg `['foo', '!bar']`) are based on the current set. Exception is if the first pattern is negation, then it will get the full set, so to match user expectation (eg. `['!foo']` will match everything except `foo`). Order matters.
 
 See the [tests](https://github.com/sindresorhus/multimatch/blob/master/test.js) for more usage examples and expected matches.
 
@@ -46,4 +44,4 @@ Same as [`minimatch.match()`](https://github.com/isaacs/minimatch#minimatchmatch
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
+[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com), [Jon Schlinkert](https://github.com/jonschlinkert)
