@@ -1,7 +1,7 @@
 {
   "name": "multimatch",
   "version": "0.2.0",
-  "description": "Adds multiple patterns support to minimatch.match()",
+  "description": "Extends minimatch.match() with support for multiple patterns",
   "license": "MIT",
   "repository": "sindresorhus/multimatch",
   "author": {
@@ -31,9 +31,11 @@
     "pattern",
     "patterns",
     "glob",
+    "globs",
     "globbing",
     "expand",
-    "wildcard"
+    "wildcard",
+    "find"
   ],
   "dependencies": {
     "array-differ": "^0.1.0",

@@ -1,6 +1,6 @@
 # multimatch [![Build Status](https://travis-ci.org/sindresorhus/multimatch.svg?branch=master)](https://travis-ci.org/sindresorhus/multimatch)
 
-> Adds multiple patterns support to [`minimatch.match()`](https://github.com/isaacs/minimatch#minimatchmatchlist-pattern-options)
+> Extends [`minimatch.match()`](https://github.com/isaacs/minimatch#minimatchmatchlist-pattern-options) with support for multiple patterns
 
 
 #### Comparison
@@ -20,7 +20,8 @@ multimatch(['unicorn', 'cake', 'rainbows'], ['*corn', 'rain*']);
 
 ## Install
 
-```bash
+```sh
+
 $ npm install --save multimatch
 ```
 
@@ -44,4 +45,4 @@ Same as [`minimatch.match()`](https://github.com/isaacs/minimatch#minimatchmatch
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com), [Jon Schlinkert](https://github.com/jonschlinkert)
+MIT © [Sindre Sorhus](http://sindresorhus.com), [Jon Schlinkert](https://github.com/jonschlinkert)

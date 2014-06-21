@@ -4,17 +4,18 @@ var union = require('array-union');
 var diff = require('array-differ');
 
 function arrayify(arr) {
-	return !Array.isArray(arr) ? [arr] : arr;
+	return Array.isArray(arr) ? arr : [arr];
 }
 
 module.exports = function (list, patterns, options) {
-	if (list == null || patterns == null) {
+	list = arrayify(list);
+	patterns = arrayify(patterns);
+
+	if (list.length === 0 || patterns.length === 0) {
 		return [];
 	}
 
 	options = options || {};
-	list = arrayify(list);
-	patterns = arrayify(patterns);
 
 	return patterns.reduce(function (ret, pattern, i) {
 		if (pattern[0] === '!') {
