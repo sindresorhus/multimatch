@@ -4,24 +4,23 @@ var union = require('array-union');
 var diff = require('array-differ');
 
 function arrayify(arr) {
-  return !Array.isArray(arr) ? [arr] : arr;
+	return !Array.isArray(arr) ? [arr] : arr;
 }
 
-module.exports = function(list, patterns, options) {
-  patterns = arrayify(patterns);
-  list = arrayify(list);
+module.exports = function (list, patterns, options) {
+	if (list == null || patterns == null) {
+		return [];
+	}
 
-  if (!list.length || !patterns.length) {return [];}
+	options = options || {};
+	list = arrayify(list);
+	patterns = arrayify(patterns);
 
-  return patterns.reduce(function(res, pattern) {
-    var excluded = [], included = [];
-    if (/^!/.test(pattern)) {
-      var negated = pattern.replace('!', '');
-      excluded = minimatch.match(list, negated, options);
-    } else {
-      included = minimatch.match(list, pattern, options);
-    }
-    included = union(res, included);
-    return diff(included, excluded);
-  }, []);
+	return patterns.reduce(function (ret, pattern, i) {
+		if (pattern[0] === '!') {
+			return diff(ret, minimatch.match(ret, pattern.slice(1), options));
+		}
+
+		return union(ret, minimatch.match(list, pattern, options));
+	}, []);
 };
