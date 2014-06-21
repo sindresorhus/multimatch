@@ -17,11 +17,14 @@ module.exports = function (list, patterns, options) {
 
 	options = options || {};
 
-	return patterns.reduce(function (ret, pattern, i) {
+	return patterns.reduce(function (ret, pattern) {
+		var process = union;
+
 		if (pattern[0] === '!') {
-			return diff(ret, minimatch.match(ret, pattern.slice(1), options));
+			pattern = pattern.slice(1);
+			process = diff;
 		}
 
-		return union(ret, minimatch.match(list, pattern, options));
+		return process(ret, minimatch.match(list, pattern, options));
 	}, []);
 };
