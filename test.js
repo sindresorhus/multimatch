@@ -195,12 +195,6 @@ describe('globule', function () {
     });
   });
 
-  describe('flatten:', function () {
-    it('should process nested pattern / filepaths arrays correctly', function () {
-    expect(mm([['foo.js', ['bar.css']]], [['*.js', '*.css'], ['*.*', '*.js']])).to.eql(['foo.js', 'bar.css']);
-    });
-  });
-
   describe('exclusion:', function () {
     it('solitary exclusion should match nothing', function () {
       expect(mm(['foo.js', 'bar.js'], ['!*.js'])).to.eql([]);

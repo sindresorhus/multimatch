@@ -1,20 +1,10 @@
 'use strict';
 var minimatch = require('minimatch');
-var _ = require('lodash');
+var union = require('array-union');
+var diff = require('array-differ');
 
 function arrayify(arr) {
-  return _.flatten(!Array.isArray(arr) ? [arr] : arr);
-}
-
-function process(arr, pattern, options) {
-  var a = [], b = [];
-  if (/^!/.test(pattern)) {
-    var negated = pattern.replace('!', '');
-    a = minimatch.match(arr, negated, options);
-  } else {
-    b = minimatch.match(arr, pattern, options);
-  }
-  return {excluded: a, included: b};
+  return !Array.isArray(arr) ? [arr] : arr;
 }
 
 module.exports = function(list, patterns, options) {
@@ -23,9 +13,15 @@ module.exports = function(list, patterns, options) {
 
   if (!list.length || !patterns.length) {return [];}
 
-  return _.reduce(patterns, function(res, pattern) {
-    var matches = process(list, pattern, options || {});
-    var included = _.union(res, matches.included);
-    return _.difference(included, matches.excluded);
+  return patterns.reduce(function(res, pattern) {
+    var excluded = [], included = [];
+    if (/^!/.test(pattern)) {
+      var negated = pattern.replace('!', '');
+      excluded = minimatch.match(list, negated, options);
+    } else {
+      included = minimatch.match(list, pattern, options);
+    }
+    included = union(res, included);
+    return diff(included, excluded);
   }, []);
 };

@@ -9,6 +9,12 @@
     "email": "sindresorhus@gmail.com",
     "url": "http://sindresorhus.com"
   },
+  "maintainers": [
+    {
+      "name": "Jon Schlinkert",
+      "url": "https://github.com/jonschlinkert"
+    }
+  ],
   "engines": {
     "node": ">=0.10.0"
   },
@@ -30,7 +36,8 @@
     "wildcard"
   ],
   "dependencies": {
-    "lodash": "^2.4.1",
+    "array-differ": "^0.1.0",
+    "array-union": "^0.1.0",
     "minimatch": "^0.3.0"
   },
   "devDependencies": {
