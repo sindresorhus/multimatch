@@ -38,9 +38,9 @@
     "find"
   ],
   "dependencies": {
-    "array-differ": "^0.1.0",
-    "array-union": "^0.1.0",
-    "minimatch": "^0.3.0"
+    "array-differ": "^1.0.0",
+    "array-union": "^1.0.0",
+    "minimatch": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^1.9.1",
