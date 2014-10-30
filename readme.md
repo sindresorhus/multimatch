@@ -20,6 +20,13 @@ multimatch(['unicorn', 'cake', 'rainbows'], ['*', '!cake']);
 //=> ['unicorn', 'rainbows']
 ```
 
+String patterns are inclusive by default, so the following yields the same as the previous example:
+
+```js
+multimatch(['unicorn', 'cake', 'rainbows'], '!cake');
+//=> ['unicorn', 'rainbows']
+```
+
 See the [tests](https://github.com/sindresorhus/multimatch/blob/master/test.js) for more usage examples and expected matches.
 
 

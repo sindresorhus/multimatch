@@ -32,9 +32,16 @@ describe('when additive string patterns are defined and matches are found:', fun
 	});
 });
 
-describe('when negation string patterns are defined', function () {
-	it('should return an array with negations omitted', function () {
-		expect(mm(['foo', 'bar', 'baz'], '!foo')).to.eql(['bar', 'baz']);
+describe('when negation patterns are defined as a string', function () {
+	it('should be exclusive by default and return an array of matches with negations omitted:', function () {
+		expect(mm(['unicorn', 'cake', 'rainbows'], ['!cake'])).to.eql([]);
+		expect(mm(['unicorn', 'cake', 'rainbows'], ['*', '!cake'])).to.eql(['unicorn', 'rainbows']);
+	});
+});
+
+describe('when negation patterns are defined as an array:', function () {
+	it('should be inclusive by default, and return an array of matches with negations omitted', function () {
+		expect(mm(['unicorn', 'cake', 'rainbows'], '!cake')).to.eql(['unicorn', 'rainbows']);
 	});
 });
 
