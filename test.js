@@ -34,7 +34,7 @@ describe('when additive string patterns are defined and matches are found:', fun
 
 describe('when negation string patterns are defined', function () {
 	it('should return an array with negations omitted', function () {
-		expect(mm(['foo', 'bar', 'baz'], '!foo')).to.eql([]);
+		expect(mm(['foo', 'bar', 'baz'], '!foo')).to.eql(['bar', 'baz']);
 	});
 });
 
