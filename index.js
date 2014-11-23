@@ -8,14 +8,16 @@ function arrayify(arr) {
 }
 
 module.exports = function (list, patterns, options) {
+	options = options || {};
 	list = arrayify(list);
-	patterns = arrayify(patterns);
 
 	if (list.length === 0 || patterns.length === 0) {
 		return [];
 	}
 
-	options = options || {};
+	if (typeof patterns === 'string') {
+		return union([], minimatch.match(list, patterns, options));
+	}
 
 	return patterns.reduce(function (ret, pattern) {
 		var process = union;
