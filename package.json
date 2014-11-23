@@ -39,7 +39,7 @@
   ],
   "dependencies": {
     "array-differ": "^1.0.0",
-    "array-union": "^1.0.0",
+    "array-union": "^1.0.1",
     "minimatch": "^1.0.0"
   },
   "devDependencies": {
