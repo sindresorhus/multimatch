@@ -34,7 +34,7 @@
   "dependencies": {
     "array-differ": "^1.0.0",
     "array-union": "^1.0.1",
-    "minimatch": "^1.0.0"
+    "minimatch": "^2.0.1"
   },
   "devDependencies": {
     "chai": "^1.9.1",
