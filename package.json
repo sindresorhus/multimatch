@@ -1,6 +1,6 @@
 {
   "name": "multimatch",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Extends minimatch.match() with support for multiple patterns",
   "license": "MIT",
   "repository": "sindresorhus/multimatch",
