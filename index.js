@@ -18,13 +18,25 @@ module.exports = function (list, patterns, options) {
 	options = options || {};
 
 	return patterns.reduce(function (ret, pattern) {
-		var process = union;
+		if (typeof pattern === 'function') {
 
-		if (pattern[0] === '!') {
-			pattern = pattern.slice(1);
-			process = diff;
+			return union(ret, list.filter(pattern));
+
+		} else if (pattern instanceof RegExp) {
+
+			return union(ret, list.filter(function(item) {
+				return pattern.test(item);
+			}));
+
+		} else {
+			var process = union;
+
+			if (pattern[0] === '!') {
+				pattern = pattern.slice(1);
+				process = diff;
+			}
+
+			return process(ret, minimatch.match(list, pattern, options));
 		}
-
-		return process(ret, minimatch.match(list, pattern, options));
 	}, []);
 };

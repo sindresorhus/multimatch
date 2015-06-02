@@ -1,5 +1,6 @@
 'use strict';
 var expect = require('chai').expect;
+var path = require('path');
 var mm = require('./');
 
 describe('when an array of additive glob patterns is defined:', function () {
@@ -169,6 +170,28 @@ describe('globule', function () {
 		expect(mm('foo.js', ['*.js', '*.css'])).to.eql(['foo.js']);
 		expect(mm(['foo.js'], ['*.js', '*.css'])).to.eql(['foo.js']);
 		expect(mm(['foo.js', 'bar.css'], ['*.js', '*.css'])).to.eql(['foo.js', 'bar.css']);
+	});
+
+	it('function matching should match correctly', function () {
+		var js = function(item) { return path.extname(item) === '.js'; };
+		var css = function(item) { return path.extname(item) === '.css'; };
+		expect(mm('foo.js', js)).to.eql(['foo.js']);
+		expect(mm(['foo.js'], js)).to.eql(['foo.js']);
+		expect(mm(['foo.js', 'bar.css'], js)).to.eql(['foo.js']);
+		expect(mm('foo.js', [js, css])).to.eql(['foo.js']);
+		expect(mm(['foo.js'], [js, css])).to.eql(['foo.js']);
+		expect(mm(['foo.js', 'bar.css'], [js, css])).to.eql(['foo.js', 'bar.css']);
+	});
+
+	it('regexp matching should match correctly', function () {
+		var js = /.*\.js$/;
+		var css = /.*\.css$/;
+		expect(mm('foo.js', js)).to.eql(['foo.js']);
+		expect(mm(['foo.js'], js)).to.eql(['foo.js']);
+		expect(mm(['foo.js', 'bar.css'], js)).to.eql(['foo.js']);
+		expect(mm('foo.js', [js, css])).to.eql(['foo.js']);
+		expect(mm(['foo.js'], [js, css])).to.eql(['foo.js']);
+		expect(mm(['foo.js', 'bar.css'], [js, css])).to.eql(['foo.js', 'bar.css']);
 	});
 
 	describe('no matches:', function () {
