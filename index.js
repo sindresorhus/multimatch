@@ -1,7 +1,7 @@
 'use strict';
 var minimatch = require('minimatch');
-var union = require('array-union');
-var diff = require('array-differ');
+var arrayUnion = require('array-union');
+var arrayDiffer = require('array-differ');
 var arrify = require('arrify');
 
 module.exports = function (list, patterns, options) {
@@ -15,11 +15,11 @@ module.exports = function (list, patterns, options) {
 	options = options || {};
 
 	return patterns.reduce(function (ret, pattern) {
-		var process = union;
+		var process = arrayUnion;
 
 		if (pattern[0] === '!') {
 			pattern = pattern.slice(1);
-			process = diff;
+			process = arrayDiffer;
 		}
 
 		return process(ret, minimatch.match(list, pattern, options));
