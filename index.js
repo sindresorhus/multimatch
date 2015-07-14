@@ -2,14 +2,11 @@
 var minimatch = require('minimatch');
 var union = require('array-union');
 var diff = require('array-differ');
-
-function arrayify(arr) {
-	return Array.isArray(arr) ? arr : [arr];
-}
+var arrify = require('arrify');
 
 module.exports = function (list, patterns, options) {
-	list = arrayify(list);
-	patterns = arrayify(patterns);
+	list = arrify(list);
+	patterns = arrify(patterns);
 
 	if (list.length === 0 || patterns.length === 0) {
 		return [];
