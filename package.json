@@ -5,8 +5,8 @@
   "license": "MIT",
   "repository": "sindresorhus/multimatch",
   "author": {
-    "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
+    "name": "Sindre Sorhus",
     "url": "http://sindresorhus.com"
   },
   "engines": {
@@ -19,21 +19,22 @@
     "index.js"
   ],
   "keywords": [
-    "minimatch",
+    "expand",
+    "find",
+    "glob",
+    "globbing",
+    "globs",
     "match",
     "matcher",
+    "minimatch",
     "pattern",
     "patterns",
-    "glob",
-    "globs",
-    "globbing",
-    "expand",
-    "wildcard",
-    "find"
+    "wildcard"
   ],
   "dependencies": {
     "array-differ": "^1.0.0",
     "array-union": "^1.0.1",
+    "arrify": "^1.0.0",
     "minimatch": "^2.0.1"
   },
   "devDependencies": {
