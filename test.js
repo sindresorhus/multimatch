@@ -94,11 +94,7 @@ describe('when inclusion and negation patterns are defined', function () {
 		expect(mm(['foo', 'bar', 'baz'], ['!*a*'])).to.eql([]);
 	});
 
-	it('should override negations and re-include explicitly defined patterns', function () {
-		expect(mm(['foo', 'bar', 'baz'], ['!*a*', '*z'])).to.eql(['baz']);
-	});
-
-	it('patterns should be order insensitive', function () {
+	it('patterns should be order sensitive', function () {
 		expect(mm(['foo', 'bar', 'baz'], ['!*a*', '*z'])).to.eql(['baz']);
 		expect(mm(['foo', 'bar', 'baz'], ['*z', '!*a*'])).to.eql([]);
 		expect(mm(['foo', 'foam', 'for', 'forum'], ['!*m', 'f*'])).to.eql(['foo', 'foam', 'for', 'forum']);
