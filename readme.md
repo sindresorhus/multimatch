@@ -27,6 +27,19 @@ See the [tests](https://github.com/sindresorhus/multimatch/blob/master/test.js) 
 
 Same as [`minimatch.match()`](https://github.com/isaacs/minimatch#minimatchmatchlist-pattern-options) except for `pattern` also accepting an array.
 
+```js
+var results = multimatch(paths, patterns);
+```
+
+The return value is an array of matching paths.
+
+
+## How multiple patterns work
+
+Positive patterns (e.g. `foo` or `*`) are additive, while negative patterns (e.g. `!foo`) are subtractive.
+
+Therefore a lone negation (e.g. `['!foo']`) will never match anything – use `['*', '!foo']` instead.
+
 
 ## Globbing patterns
 
