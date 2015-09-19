@@ -36,7 +36,7 @@ The return value is an array of matching paths.
 
 ## How multiple patterns work
 
-Positive patterns (e.g. `foo` or `*`) are additive, while negative patterns (e.g. `!foo`) are subtractive.
+Positive patterns (e.g. `foo` or `*`) add to the results, while negative patterns (e.g. `!foo`) subtract from the results.
 
 Therefore a lone negation (e.g. `['!foo']`) will never match anything – use `['*', '!foo']` instead.
 
