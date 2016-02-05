@@ -54,7 +54,8 @@ Just a quick overview.
 
 ## Related
 
-See [globby](https://github.com/sindresorhus/globby) if you need to match against the filesystem instead of a list.
+- [globby](https://github.com/sindresorhus/globby) - Match against the filesystem instead of a list
+- [matcher](https://github.com/sindresorhus/matcher) - Simple wildcard matching
 
 
 ## License
