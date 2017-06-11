@@ -1,10 +1,10 @@
 'use strict';
-var minimatch = require('minimatch');
-var arrayUnion = require('array-union');
-var arrayDiffer = require('array-differ');
-var arrify = require('arrify');
+const minimatch = require('minimatch');
+const arrayUnion = require('array-union');
+const arrayDiffer = require('array-differ');
+const arrify = require('arrify');
 
-module.exports = function (list, patterns, options) {
+module.exports = (list, patterns, options) => {
 	list = arrify(list);
 	patterns = arrify(patterns);
 
@@ -14,8 +14,8 @@ module.exports = function (list, patterns, options) {
 
 	options = options || {};
 
-	return patterns.reduce(function (ret, pattern) {
-		var process = arrayUnion;
+	return patterns.reduce((ret, pattern) => {
+		let process = arrayUnion;
 
 		if (pattern[0] === '!') {
 			pattern = pattern.slice(1);
