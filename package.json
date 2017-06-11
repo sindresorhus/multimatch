@@ -38,7 +38,7 @@
     "wildcard"
   ],
   "dependencies": {
-    "array-differ": "^2.0.3",
+    "array-differ": "^1.0.0",
     "array-union": "^1.0.1",
     "arrify": "^1.0.0",
     "minimatch": "^3.0.0"
