@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install --save multimatch
+$ npm install multimatch
 ```
 
 
@@ -59,4 +59,4 @@ Just a quick overview.
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com), [Jon Schlinkert](https://github.com/jonschlinkert)
+MIT © [Sindre Sorhus](https://sindresorhus.com), [Jon Schlinkert](https://github.com/jonschlinkert)
