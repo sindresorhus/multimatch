@@ -5,15 +5,15 @@
   "license": "MIT",
   "repository": "sindresorhus/multimatch",
   "author": {
-    "email": "sindresorhus@gmail.com",
     "name": "Sindre Sorhus",
-    "url": "http://sindresorhus.com"
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "xo && ava"
   },
   "files": [
     "index.js"
@@ -38,7 +38,7 @@
     "minimatch": "^3.0.0"
   },
   "devDependencies": {
-    "chai": "^3.4.1",
-    "mocha": "*"
+    "ava": "*",
+    "xo": "*"
   }
 }

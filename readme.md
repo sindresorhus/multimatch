@@ -5,16 +5,15 @@
 
 ## Install
 
-```sh
-
-$ npm install --save multimatch
+```
+$ npm install multimatch
 ```
 
 
 ## Usage
 
 ```js
-var multimatch = require('multimatch');
+const multimatch = require('multimatch');
 
 multimatch(['unicorn', 'cake', 'rainbows'], ['*', '!cake']);
 //=> ['unicorn', 'rainbows']
@@ -28,7 +27,7 @@ See the [tests](https://github.com/sindresorhus/multimatch/blob/master/test.js) 
 Same as [`minimatch.match()`](https://github.com/isaacs/minimatch#minimatchmatchlist-pattern-options) except for `pattern` also accepting an array.
 
 ```js
-var results = multimatch(paths, patterns);
+const results = multimatch(paths, patterns);
 ```
 
 The return value is an array of matching paths.
@@ -60,4 +59,4 @@ Just a quick overview.
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
