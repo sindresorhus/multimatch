@@ -19,7 +19,7 @@ multimatch(['unicorn', 'cake', 'rainbows'], ['*', '!cake']);
 //=> ['unicorn', 'rainbows']
 ```
 
-See the [tests](https://github.com/sindresorhus/multimatch/blob/master/test.js) for more usage examples and expected matches.
+See the [tests](https://github.com/sindresorhus/multimatch/tree/master/test) for more usage examples and expected matches.
 
 
 ## API
