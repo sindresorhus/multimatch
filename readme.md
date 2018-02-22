@@ -24,14 +24,28 @@ See the [tests](https://github.com/sindresorhus/multimatch/tree/master/test) for
 
 ## API
 
-Same as [`minimatch.match()`](https://github.com/isaacs/minimatch#minimatchmatchlist-pattern-options) except for `pattern` also accepting an array.
-
-```js
-const results = multimatch(paths, patterns);
-```
+### multimatch(paths, patterns, [options]
 
 The return value is an array of matching paths.
 
+#### paths
+
+Type: `string` `Array`
+
+#### patterns
+
+Type: `string` `Array`
+
+See supported minimatch [patterns](https://github.com/isaacs/minimatch#usage).
+
+- [Pattern examples with expected matches](https://github.com/sindresorhus/multimatch/blob/master/test/test.js)
+- [Quick globbing pattern overview](https://github.com/sindresorhus/multimatch#globbing-patterns)
+
+#### options
+
+Type: `Object`
+
+See the [`glob` options](https://github.com/isaacs/node-glob#options).
 
 ## How multiple patterns work
 
