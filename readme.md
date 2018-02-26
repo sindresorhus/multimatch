@@ -26,15 +26,15 @@ See the [tests](https://github.com/sindresorhus/multimatch/tree/master/test) for
 
 ### multimatch(paths, patterns, [options]
 
-The return value is an array of matching paths.
+Returns an array of matching paths.
 
 #### paths
 
-Type: `string` `Array`
+Type: `string` `string[]`
 
 #### patterns
 
-Type: `string` `Array`
+Type: `string` `string[]`
 
 See supported minimatch [patterns](https://github.com/isaacs/minimatch#usage).
 
@@ -45,7 +45,8 @@ See supported minimatch [patterns](https://github.com/isaacs/minimatch#usage).
 
 Type: `Object`
 
-See the [`glob` options](https://github.com/isaacs/node-glob#options).
+See the [`minimatch` options](https://github.com/isaacs/minimatch#options).
+
 
 ## How multiple patterns work
 
