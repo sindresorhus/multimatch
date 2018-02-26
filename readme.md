@@ -36,7 +36,7 @@ Type: `string` `string[]`
 
 Type: `string` `string[]`
 
-See supported minimatch [patterns](https://github.com/isaacs/minimatch#usage).
+See supported [`minimatch` patterns](https://github.com/isaacs/minimatch#usage).
 
 - [Pattern examples with expected matches](https://github.com/sindresorhus/multimatch/blob/master/test/test.js)
 - [Quick globbing pattern overview](https://github.com/sindresorhus/multimatch#globbing-patterns)
