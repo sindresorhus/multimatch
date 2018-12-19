@@ -4,15 +4,13 @@ const arrayUnion = require('array-union');
 const arrayDiffer = require('array-differ');
 const arrify = require('arrify');
 
-module.exports = (list, patterns, options) => {
+module.exports = (list, patterns, options = {}) => {
 	list = arrify(list);
 	patterns = arrify(patterns);
 
 	if (list.length === 0 || patterns.length === 0) {
 		return [];
 	}
-
-	options = options || {};
 
 	return patterns.reduce((ret, pattern) => {
 		let process = arrayUnion;
