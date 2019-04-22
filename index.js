@@ -12,7 +12,7 @@ module.exports = (list, patterns, options = {}) => {
 		return [];
 	}
 
-	return patterns.reduce((ret, pattern) => {
+	return patterns.reduce((result, pattern) => {
 		let process = arrayUnion;
 
 		if (pattern[0] === '!') {
@@ -20,6 +20,6 @@ module.exports = (list, patterns, options = {}) => {
 			process = arrayDiffer;
 		}
 
-		return process(ret, minimatch.match(list, pattern, options));
+		return process(result, minimatch.match(list, pattern, options));
 	}, []);
 };
