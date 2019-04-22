@@ -30,13 +30,13 @@ Returns an array of matching paths.
 
 #### paths
 
-Type: `string` `string[]`
+Type: `string | string[]`
 
 Paths to match against.
 
 #### patterns
 
-Type: `string` `string[]`
+Type: `string | string[]`
 
 Globbing patterns to use. e.g. `[*, "!cake"]`. See supported [`minimatch` patterns](https://github.com/isaacs/minimatch#usage).
 
