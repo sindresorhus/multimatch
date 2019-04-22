@@ -38,7 +38,7 @@ Paths to match against.
 
 Type: `string | string[]`
 
-Globbing patterns to use. e.g. `[*, "!cake"]`. See supported [`minimatch` patterns](https://github.com/isaacs/minimatch#usage).
+Globbing patterns to use. For example: `['*', '!cake']`. See supported [`minimatch` patterns](https://github.com/isaacs/minimatch#usage).
 
 - [Pattern examples with expected matches](https://github.com/sindresorhus/multimatch/blob/master/test/test.js)
 - [Quick globbing pattern overview](https://github.com/sindresorhus/multimatch#globbing-patterns)
