@@ -12,7 +12,7 @@ module.exports = (list, patterns, options = {}) => {
 		return [];
 	}
 
-	return patterns.reduce((result, pattern) => {
+	const unsorted = patterns.reduce((result, pattern) => {
 		let process = arrayUnion;
 
 		if (pattern[0] === '!') {
@@ -22,4 +22,9 @@ module.exports = (list, patterns, options = {}) => {
 
 		return process(result, minimatch.match(list, pattern, options));
 	}, []);
+	if (options.ordered) {
+		return list.filter(el => unsorted.indexOf(el) > -1);
+	}
+
+	return unsorted;
 };

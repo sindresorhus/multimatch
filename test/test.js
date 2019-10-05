@@ -66,6 +66,10 @@ test('override negations and re-include explicitly defined patterns', t => {
 	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['!*a*', '*z']), ['baz']);
 });
 
+test('list be sorted when order enabled', t => {
+	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['*', '!*{o,r}', 'foo'], {ordered: true}), ['foo', 'baz']);
+});
+
 test('misc', t => {
 	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['*', '!foo']), ['bar', 'baz']);
 	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['*', '!foo', 'bar']), ['bar', 'baz']);
