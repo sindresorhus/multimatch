@@ -32,7 +32,7 @@ Returns an array of matching paths.
 
 Type: `string | string[]`
 
-Paths to match against.
+Paths to match against in the order of input paths.
 
 #### patterns
 
