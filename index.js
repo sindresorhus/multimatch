@@ -7,13 +7,13 @@ const arrify = require('arrify');
 module.exports = (list, patterns, options = {}) => {
 	list = arrify(list);
 	patterns = arrify(patterns);
-	let result = [];
 
 	if (list.length === 0 || patterns.length === 0) {
 		return [];
 	}
 
-	for (const el of list) {
+	let result = [];
+	for (const item of list) {
 		for (let pattern of patterns) {
 			let process = arrayUnion;
 
@@ -22,7 +22,7 @@ module.exports = (list, patterns, options = {}) => {
 				process = arrayDiffer;
 			}
 
-			result = process(result, minimatch.match([el], pattern, options));
+			result = process(result, minimatch.match([item], pattern, options));
 		}
 	}
 
