@@ -11,9 +11,9 @@ $ npm install multimatch
 ## Usage
 
 ```js
-const multimatch = require("multimatch");
+const multimatch = require('multimatch');
 
-multimatch(["unicorn", "cake", "rainbows"], ["*", "!cake"]);
+multimatch(['unicorn', 'cake', 'rainbows'], ['*', '!cake']);
 //=> ['unicorn', 'rainbows']
 ```
 
