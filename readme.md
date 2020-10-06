@@ -29,7 +29,7 @@ Returns an array of matching paths in the order of input paths.
 
 Type: `string | string[]`
 
-Paths to match against .
+Paths to match against.
 
 #### patterns
 
