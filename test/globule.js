@@ -44,7 +44,7 @@ test('partial exclusion should partially cancel match', t => {
 
 test('inclusion / exclusion order matters', t => {
 	t.deepEqual(multimatch(['foo.js', 'bar.js', 'baz.js'], ['*.js', '!*.js', 'b*.js']), ['bar.js', 'baz.js']);
-	t.deepEqual(multimatch(['foo.js', 'bar.js', 'baz.js'], ['*.js', '!f*.js', '*.js']), ['bar.js', 'baz.js', 'foo.js']);
+	t.deepEqual(multimatch(['foo.js', 'bar.js', 'baz.js'], ['*.js', '!f*.js', '*.js']), ['foo.js', 'bar.js', 'baz.js']);
 });
 
 test('should matchBase (minimatch) when specified.', t => {

@@ -21,10 +21,12 @@ test('return an array of matches', t => {
 	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['foo', 'bar']), ['foo', 'bar']);
 });
 
-test('return matches in the order the patterns were defined', t => {
-	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['bar', 'f*']), ['bar', 'foo']);
+test('return matches in the order the list were defined', t => {
+	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['bar', 'f*']), ['foo', 'bar']);
 	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['f*', '*z']), ['foo', 'baz']);
-	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['*z', 'f*']), ['baz', 'foo']);
+	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['*z', 'f*']), ['foo', 'baz']);
+	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['!*z', '*r', 'f*']), ['foo', 'bar']);
+	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['*a*', '!f*']), ['bar', 'baz']);
 });
 
 test('return an array with negations omitted', t => {
@@ -53,7 +55,7 @@ test('patterns be order sensitive', t => {
 	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['foo', '!*{o,r}']), []);
 	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['!foo', 'bar']), ['bar']);
 	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['foo', '!bar']), ['foo']);
-	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['bar', '!foo', 'foo']), ['bar', 'foo']);
+	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['bar', '!foo', 'foo']), ['foo', 'bar']);
 	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['foo', '!foo', 'bar']), ['bar']);
 });
 
@@ -75,7 +77,7 @@ test('misc', t => {
 	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['!*{o,r}', '*']), ['foo', 'bar', 'baz']);
 	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['*', '!*{o,r}']), ['baz']);
 	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['foo', '!*{o,r}', '*']), ['foo', 'bar', 'baz']);
-	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['*', '!*{o,r}', 'foo']), ['baz', 'foo']);
+	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['*', '!*{o,r}', 'foo']), ['foo', 'baz']);
 	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['!*{o,r}', '*', 'foo']), ['foo', 'bar', 'baz']);
 	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['foo', '!*{o,r}']), []);
 	t.deepEqual(multimatch(['foo', 'bar', 'baz'], ['foo', '!*{o,r}', 'foo']), ['foo']);

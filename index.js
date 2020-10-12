@@ -12,14 +12,19 @@ module.exports = (list, patterns, options = {}) => {
 		return [];
 	}
 
-	return patterns.reduce((result, pattern) => {
-		let process = arrayUnion;
+	let result = [];
+	for (const item of list) {
+		for (let pattern of patterns) {
+			let process = arrayUnion;
 
-		if (pattern[0] === '!') {
-			pattern = pattern.slice(1);
-			process = arrayDiffer;
+			if (pattern[0] === '!') {
+				pattern = pattern.slice(1);
+				process = arrayDiffer;
+			}
+
+			result = process(result, minimatch.match([item], pattern, options));
 		}
+	}
 
-		return process(result, minimatch.match(list, pattern, options));
-	}, []);
+	return result;
 };
