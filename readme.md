@@ -1,4 +1,4 @@
-# multimatch [![Build Status](https://travis-ci.org/sindresorhus/multimatch.svg?branch=master)](https://travis-ci.org/sindresorhus/multimatch)
+# multimatch [![Build Status](https://travis-ci.com/sindresorhus/multimatch.svg?branch=master)](https://travis-ci.com/github/sindresorhus/multimatch)
 
 > Extends [`minimatch.match()`](https://github.com/isaacs/minimatch#minimatchmatchlist-pattern-options) with support for multiple patterns
 

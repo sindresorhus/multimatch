@@ -20,8 +20,8 @@ multimatch(['unicorn', 'cake', 'rainbows'], ['*', '!cake']);
 ```
 */
 declare function multimatch(
-	paths: string | string[],
-	patterns: string | string[],
+	paths: string | readonly string[],
+	patterns: string | readonly string[],
 	options?: multimatch.Options
 ): string[];
 
