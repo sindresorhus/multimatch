@@ -1,12 +1,10 @@
-'use strict';
-const minimatch = require('minimatch');
-const arrayUnion = require('array-union');
-const arrayDiffer = require('array-differ');
-const arrify = require('arrify');
+import minimatch from 'minimatch';
+import arrayUnion from 'array-union';
+import arrayDiffer from 'array-differ';
 
-module.exports = (list, patterns, options = {}) => {
-	list = arrify(list);
-	patterns = arrify(patterns);
+export default function multimatch(list, patterns, options = {}) {
+	list = [list].flat();
+	patterns = [patterns].flat();
 
 	if (list.length === 0 || patterns.length === 0) {
 		return [];
@@ -27,4 +25,4 @@ module.exports = (list, patterns, options = {}) => {
 	}
 
 	return result;
-};
+}

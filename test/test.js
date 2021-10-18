@@ -1,5 +1,5 @@
 import test from 'ava';
-import multimatch from '..';
+import multimatch from '../index.js';
 
 const fixtures = ['vendor/js/foo.js', 'vendor/js/bar.js', 'vendor/js/baz.js'];
 

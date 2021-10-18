@@ -4,14 +4,14 @@
 
 ## Install
 
-```
-$ npm install multimatch
+```sh
+npm install multimatch
 ```
 
 ## Usage
 
 ```js
-const multimatch = require('multimatch');
+import multimatch from 'multimatch';
 
 multimatch(['unicorn', 'cake', 'rainbows'], ['*', '!cake']);
 //=> ['unicorn', 'rainbows']
@@ -29,7 +29,7 @@ Returns an array of matching paths in the order of input paths.
 
 Type: `string | string[]`
 
-Paths to match against.
+The paths to match against.
 
 #### patterns
 
@@ -50,7 +50,7 @@ See the [`minimatch` options](https://github.com/isaacs/minimatch#options).
 
 Positive patterns (e.g. `foo` or `*`) add to the results, while negative patterns (e.g. `!foo`) subtract from the results.
 
-Therefore a lone negation (e.g. `['!foo']`) will never match anything – use `['*', '!foo']` instead.
+Therefore a lone negation (e.g. `['!foo']`) will never match anything. Use `['*', '!foo']` instead.
 
 ## Globbing patterns
 

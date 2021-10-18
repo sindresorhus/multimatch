@@ -1,6 +1,6 @@
 // Tests from [globule](https://github.com/cowboy/node-globule)
 import test from 'ava';
-import multimatch from '..';
+import multimatch from '../index.js';
 
 test('Should return empty set if a required argument is missing or an empty set.', t => {
 	t.deepEqual(multimatch('', 'foo.js'), []);
