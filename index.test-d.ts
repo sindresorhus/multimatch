@@ -1,6 +1,5 @@
-import multimatch, {Options} from './index.js';
+import multimatch, {type Options} from './index.js';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const options: Options = {};
 
 multimatch(['unicorn', 'cake', 'rainbows'], '!cake');

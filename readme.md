@@ -66,15 +66,3 @@ Just a quick overview.
 
 - [globby](https://github.com/sindresorhus/globby) - Match against the filesystem instead of a list
 - [matcher](https://github.com/sindresorhus/matcher) - Simple wildcard matching
-
----
-
-<div align="center">
-	<b>
-		<a href="https://tidelift.com/subscription/pkg/npm-multimatch?utm_source=npm-multimatch&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
-	</b>
-	<br>
-	<sub>
-		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
-	</sub>
-</div>

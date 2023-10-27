@@ -1,6 +1,6 @@
-import {IOptions} from 'minimatch';
+import {type MinimatchOptions} from 'minimatch';
 
-export type Options = Readonly<IOptions>;
+export type Options = Readonly<MinimatchOptions>;
 
 /**
 Extends [`minimatch.match()`](https://github.com/isaacs/minimatch#minimatchmatchlist-pattern-options) with support for multiple patterns.
@@ -22,4 +22,3 @@ export default function multimatch(
 	patterns: string | readonly string[],
 	options?: Options
 ): string[];
-

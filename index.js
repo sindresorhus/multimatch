@@ -1,4 +1,4 @@
-import minimatch from 'minimatch';
+import {minimatch} from 'minimatch';
 import arrayUnion from 'array-union';
 import arrayDiffer from 'array-differ';
 
