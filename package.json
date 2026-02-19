@@ -16,7 +16,7 @@
 		"default": "./index.js"
 	},
 	"engines": {
-		"node": ">=18"
+		"node": ">=20"
 	},
 	"scripts": {
 		"test": "xo && ava && tsd"
@@ -41,7 +41,7 @@
 	"dependencies": {
 		"array-differ": "^4.0.0",
 		"array-union": "^3.0.1",
-		"minimatch": "^9.0.3"
+		"minimatch": "^10.2.1"
 	},
 	"devDependencies": {
 		"ava": "^5.3.1",
