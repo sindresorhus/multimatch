@@ -15,8 +15,9 @@
 		"types": "./index.d.ts",
 		"default": "./index.js"
 	},
+	"sideEffects": false,
 	"engines": {
-		"node": ">=18"
+		"node": ">=20"
 	},
 	"scripts": {
 		"test": "xo && ava && tsd"
@@ -41,11 +42,11 @@
 	"dependencies": {
 		"array-differ": "^4.0.0",
 		"array-union": "^3.0.1",
-		"minimatch": "^9.0.3"
+		"minimatch": "^10.2.2"
 	},
 	"devDependencies": {
-		"ava": "^5.3.1",
-		"tsd": "^0.29.0",
-		"xo": "^0.56.0"
+		"ava": "^6.4.1",
+		"tsd": "^0.33.0",
+		"xo": "^1.2.3"
 	}
 }
